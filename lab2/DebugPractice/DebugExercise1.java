@@ -1,10 +1,11 @@
 /**
  * Exercise for learning how the debug, breakpoint, and step-into
  * feature work.
+ * Debugged by Xiaoyu on 5/23/18
  */
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {
-        int quotient = top / bottom;
+        float quotient = (float) top / bottom;
         int result = Math.round(quotient);
         return result;
     }
