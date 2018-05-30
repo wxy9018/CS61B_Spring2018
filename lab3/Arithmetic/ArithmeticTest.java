@@ -29,7 +29,8 @@ public class ArithmeticTest {
     }
 
     /* Run the unit tests in this file. */
-    public static void main(String... args) {        
-        jh61b.junit.TestRunner.runTests("all", ArithmeticTest.class);
-    }
+    //public static void main(String... args) {
+     //   jh61b.junit.TestRunner.runTests("all", ArithmeticTest.class);
+        //org.junit.TestRunner.runTests("all", ArithmeticTest.class);
+    //}
 }
