@@ -12,7 +12,7 @@ public class BoringWorldDemo {
     private static final int HEIGHT = 30;
 
     public static void main(String[] args) {
-        // initialize the tile rendering engine with a window of size WIDTH x HEIGHT
+        // initialize the tile rendering engine with a window of Size WIDTH x HEIGHT
         TERenderer ter = new TERenderer();
         ter.initialize(WIDTH, HEIGHT);
 

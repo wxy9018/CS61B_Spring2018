@@ -109,7 +109,7 @@ public class HexWorld {
         unitHexagon(4, new int[]{47,53}, world, 1); */
 
 
-        TETile[][] hexWorld = addHexagon(3, new int[]{20, 20},WIDTH, HEIGHT);
+        TETile[][] hexWorld = addHexagon(6, new int[]{29, 29},WIDTH, HEIGHT);
         ter.renderFrame(hexWorld);
     }
 }

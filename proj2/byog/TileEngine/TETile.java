@@ -13,7 +13,7 @@ import byog.Core.RandomUtils;
  *
  * All TETile objects must have a character, textcolor, and background color to be used to represent
  * the tile when drawn to the screen. You can also optionally provide a path to an image file of an
- * appropriate size (16x16) to be drawn in place of the unicode representation. If the image path
+ * appropriate Size (16x16) to be drawn in place of the unicode representation. If the image path
  * provided cannot be found, draw will fallback to using the provided character and color
  * representation, so you are free to use image tiles on your own computer.
  *
@@ -34,7 +34,7 @@ public class TETile {
      * @param textColor The color of the character itself.
      * @param backgroundColor The color drawn behind the character.
      * @param description The description of the tile, shown in the GUI on hovering over the tile.
-     * @param filepath Full path to image to be used for this tile. Must be correct size (16x16)
+     * @param filepath Full path to image to be used for this tile. Must be correct Size (16x16)
      */
     public TETile(char character, Color textColor, Color backgroundColor, String description,
                   String filepath) {
@@ -76,7 +76,7 @@ public class TETile {
      * we draw the image located at that filepath to the screen. Otherwise, we fall
      * back to the character and color representation for the tile.
      *
-     * Note that the image provided must be of the right size (16x16). It will not be
+     * Note that the image provided must be of the right Size (16x16). It will not be
      * automatically resized or truncated.
      * @param x x coordinate
      * @param y y coordinate

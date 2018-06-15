@@ -6,8 +6,8 @@ import byog.TileEngine.TETile;
 public class Game {
     TERenderer ter = new TERenderer();
     /* Feel free to change the width and height. */
-    public static final int WIDTH = 80;
-    public static final int HEIGHT = 30;
+    public static final int WIDTH = 120;
+    public static final int HEIGHT = 65;
 
     /**
      * Method used for playing a fresh game. The game should start from the main menu.
@@ -31,8 +31,8 @@ public class Game {
         // TODO: Fill out this method to run the game using the input passed in,
         // and return a 2D tile representation of the world that would have been
         // drawn if the same inputs had been given to playWithKeyboard().
-
-        TETile[][] finalWorldFrame = null;
+        String SEED = input.substring(1,input.length()-2);
+        TETile[][] finalWorldFrame = new mapGenerator(Long.parseLong(SEED)).matrix(WIDTH, HEIGHT);
         return finalWorldFrame;
     }
 }

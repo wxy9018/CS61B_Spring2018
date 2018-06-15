@@ -76,8 +76,8 @@ public class TERenderer {
      *               startY+1    [0][1]  |  [1][1]  |  [2][1]  | .... | [N-1][1]
      *                 startY    [0][0]  |  [1][0]  |  [2][0]  | .... | [N-1][0]
      *
-     * By varying xOffset, yOffset, and the size of the screen when initialized, you can leave
-     * empty space in different places to leave room for other information, such as a GUI.
+     * By varying xOffset, yOffset, and the Size of the screen when initialized, you can leave
+     * empty space in different places to leave Room for other information, such as a GUI.
      * This method assumes that the xScale and yScale have been set such that the max x
      * value is the width of the screen in tiles, and the max y value is the height of
      * the screen in tiles.
