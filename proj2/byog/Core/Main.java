@@ -7,17 +7,15 @@ import byog.TileEngine.TETile;
  *  in either keyboard or input string mode.
  */
 public class Main {
+
+    // this sets the width and height of the game window. pixel count is the following number times 16. (each tile is 16*16 pixels)
+    public static final int WIDTH = 110;
+    public static final int HEIGHT = 55; // actual height will be 3 tiles more than this number for displaying the information panel.
+
+    // Method used for playing a fresh game. The game should start from the main menu.
     public static void main(String[] args) {
-        if (args.length > 1) {
-            System.out.println("Can only have one argument - the input string");
-            System.exit(0);
-        } else if (args.length == 1) {
-            Game game = new Game();
-            TETile[][] worldState = game.playWithInputString(args[0]);
-            System.out.println(TETile.toString(worldState));
-        } else {
-            Game game = new Game();
-            game.playWithKeyboard();
-        }
+        displayHandler display = new displayHandler(WIDTH, HEIGHT, null, null);
+        display.canvasPrepare();
+        new newGame(WIDTH,HEIGHT).startGame();
     }
 }

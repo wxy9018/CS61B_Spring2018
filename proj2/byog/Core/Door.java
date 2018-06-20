@@ -13,10 +13,7 @@ public class Door{
         openDirection = direction;
     }
     public boolean equal(Door compare) {
-        if (this.openDirection == compare.openDirection && this.doorPos.equal(compare.doorPos)) {
-            return true;
-        }
-        return false;
+        return this.openDirection == compare.openDirection && this.doorPos.equal(compare.doorPos);
     }
 
     static Door mirrorDoor(Door queueDoor) { // given a door, get the contrast door
@@ -39,28 +36,30 @@ public class Door{
         while (true) {
             for (int i = 1; i < map.length / 4; i++) {
                 for (int j = 1; j < map[0].length - 1; j++) {
-                    if (oneDoor(map, i, j, RANDOM)) return;
+                    if (oneDoor(map, i, j, RANDOM)) return;// new Position(i,j);
                 }
             }
             for (int i = map.length * 3 / 4; i < map.length - 1; i++) {
                 for (int j = 1; j < map[0].length - 1; j++) {
-                    if (oneDoor(map, i, j, RANDOM)) return;
+                    if (oneDoor(map, i, j, RANDOM)) return;// new Position(i,j);
                 }
             }
             for (int i = 1; i < map.length - 1; i++) {
                 for (int j = 1; j < map[0].length / 4; j++) {
-                    if (oneDoor(map, i, j, RANDOM)) return;
+                    if (oneDoor(map, i, j, RANDOM)) return;// new Position(i,j);
                 }
             }
             for (int i = 1; i < map.length - 1; i++) {
                 for (int j = map[0].length * 3 / 4; j < map[0].length - 1; j++) {
-                    if (oneDoor(map, i, j, RANDOM)) return;
+                    if (oneDoor(map, i, j, RANDOM)) return;// new Position(i,j);
                 }
             }
         }
     }
 
     private static boolean oneDoor(TETile[][] map, int i, int j, Random RANDOM) {
+        // returns true if the given position [i][j] is turned into a door
+        // a given position is turned into a door if it can be turned into a door and the probability determines it will be turned into a door
         boolean generate = (RANDOM.nextInt(500) < 1); // this sets the probability if this wall is going to be changed into a door
         TETile self = map[i][j];
         TETile left = map[i - 1][j];

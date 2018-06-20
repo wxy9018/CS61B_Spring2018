@@ -14,7 +14,7 @@ public class Room {
     Position roomPos; // upper left corner of the Room
     Size roomSize; // the size includes the wall thickness
     Door[] roomDoors; // door positions must be on the walls
-    boolean valid = true;
+    boolean valid = true; // this is an indicator if the room is a valid room that does not conflict with anything else in the map
 
     public Room(){}
 
@@ -106,25 +106,4 @@ public class Room {
         }
         return newRoom;
     }
-
-    //* Unused code is moved to below
-
-    /*
-    // constructor, generates a room of the given size at the given location, with numDoors randomly generated doors
-    public Room(Position pos, Size size, int numDoors, Random RANDOM) { // minimum sizes on both x and y dimensions are 3
-        roomPos = pos;
-        roomSize = size;
-
-        // Randomly generate N=numDoors doors on the walls, random locations.
-        roomDoors = new Door[numDoors];
-        for (int i = 0; i < numDoors; i++) {
-            int wallLabel = RANDOM.nextInt(4); // select which wall to generate a door
-            switch (wallLabel) {
-                case 0: roomDoors[i] = new Door(new Position(roomPos.xPos, roomPos.yPos + 1 + RANDOM.nextInt(roomSize.ySize - 2)), 0); break; // left wall
-                case 3: roomDoors[i] = new Door(new Position(roomPos.xPos + roomSize.xSize - 1, roomPos.yPos + 1 + RANDOM.nextInt(roomSize.ySize - 2)), 3); break; // right wall
-                case 1: roomDoors[i] = new Door(new Position(roomPos.xPos + 1 + RANDOM.nextInt(roomSize.xSize - 2), roomPos.yPos), 1); break; // top wall
-                case 2: roomDoors[i] = new Door(new Position(roomPos.xPos + 1 + RANDOM.nextInt(roomSize.xSize - 2), roomPos.yPos + roomSize.ySize - 1), 2); break; // bottom wall
-            }
-        }
-    }*/
 }

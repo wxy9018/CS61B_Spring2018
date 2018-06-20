@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Hallway extends Room {
 
-    private static final int maxDimension = 10; // need to be greater than 3. Min dimension is 3 by default.
+    private static final int maxDimension = 8; // need to be greater than 3. Min dimension is 3 by default.
     private static final int maxDoors = 6;
     private static final int minDoors = 3; // need to be greater than 2
     private static final int maxTrialRoomMaker = 10;

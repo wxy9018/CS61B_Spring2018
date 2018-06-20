@@ -12,10 +12,10 @@ public class tester {
         TERenderer ter = new TERenderer();
         ter.initialize(WIDTH, HEIGHT);
 
-        TETile[][] world = new Game().playWithInputString("A99583Q");
+        //TETile[][] world = new Game().playWithInputString("A99583Q");
 
 
-        ter.renderFrame(world);
+        //ter.renderFrame(world);
 
         /*
         // generate an empty world map

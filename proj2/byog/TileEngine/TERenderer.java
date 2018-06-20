@@ -17,6 +17,8 @@ public class TERenderer {
     private int height;
     private int xOffset;
     private int yOffset;
+    Font smallFont = new Font("Arial Bold", Font.ITALIC,20);
+    Font font = new Font("Monaco", Font.BOLD, TILE_SIZE - 2);
 
     /**
      * Same functionality as the other initialization method. The only difference is that the xOff
@@ -32,8 +34,11 @@ public class TERenderer {
         this.height = h;
         this.xOffset = xOff;
         this.yOffset = yOff;
-        StdDraw.setCanvasSize(width * TILE_SIZE, height * TILE_SIZE);
         Font font = new Font("Monaco", Font.BOLD, TILE_SIZE - 2);
+
+
+        StdDraw.setCanvasSize(width * TILE_SIZE, height * TILE_SIZE);
+
         StdDraw.setFont(font);      
         StdDraw.setXscale(0, width);
         StdDraw.setYscale(0, height);
@@ -87,6 +92,7 @@ public class TERenderer {
         int numXTiles = world.length;
         int numYTiles = world[0].length;
         StdDraw.clear(new Color(0, 0, 0));
+        StdDraw.setFont(font);
         for (int x = 0; x < numXTiles; x += 1) {
             for (int y = 0; y < numYTiles; y += 1) {
                 if (world[x][y] == null) {
@@ -96,6 +102,11 @@ public class TERenderer {
                 world[x][y].draw(x + xOffset, y + yOffset);
             }
         }
+        /*
+        StdDraw.setPenColor(Color.WHITE);
+        StdDraw.textLeft(1, height - 1, " Moving Actions: 'W'- Up; 'A'- Left; 'D'- Right; 'S'- Down");
+        StdDraw.textRight(width - 1, height - 1, "Press 'S' to save progress; Press 'Q' to quit game");
+        StdDraw.line(0, height - 2, width, height - 2);*/
         StdDraw.show();
     }
 }
