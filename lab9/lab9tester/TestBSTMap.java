@@ -86,6 +86,31 @@ public class TestBSTMap {
         assertTrue(b.get("hi") != null);
     }
 
+    @Test
+    public void deletionTest() {
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        b.put("hi", 1);
+        b.put("ga", 3);
+        b.put("ka", 2);
+        b.put("ab", 9);
+        assertTrue(b.containsKey("hi"));
+        assertTrue(b.get("hi") != null);
+        for (String s : b) {
+            System.out.print(s + ' ');
+        }
+        System.out.println();
+        b.remove("ga");
+        for (String s : b) {
+            System.out.print(s + ' ');
+        }
+        System.out.println();
+        b.remove("ka", 1);
+        for (String s : b) {
+            System.out.print(s + ' ');
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(TestBSTMap.class);
     }
