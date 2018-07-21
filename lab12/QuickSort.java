@@ -48,12 +48,46 @@ public class QuickSort {
             Queue<Item> unsorted, Item pivot,
             Queue<Item> less, Queue<Item> equal, Queue<Item> greater) {
         // Your code here!
+        for (Item i : unsorted) {
+            if (i.compareTo(pivot) > 0) {
+                greater.enqueue(i);
+            } else if (i.compareTo(pivot) < 0) {
+                less.enqueue(i);
+            } else {
+                equal.enqueue(i);
+            }
+        }
     }
 
     /** Returns a Queue that contains the given items sorted from least to greatest. */
     public static <Item extends Comparable> Queue<Item> quickSort(
             Queue<Item> items) {
         // Your code here!
-        return items;
+        if (items.size() <= 1) {
+            return items;
+        }
+
+        Item pivot = getRandomItem(items);
+        Queue<Item> less = new Queue<>();
+        Queue<Item> equal = new Queue<>();
+        Queue<Item> greater = new Queue<>();
+        partition(items, pivot, less, equal, greater);
+
+        Queue<Item> result = catenate(quickSort(less), equal);
+        result = catenate(result, quickSort(greater));
+        return result;
+    }
+
+    /** main method that tests the functionality of the mergeSort algorithm */
+    public static void main(String[] args) {
+        Queue<String> students = new Queue<>();
+        students.enqueue("Alice");
+        students.enqueue("Ethan");
+        students.enqueue("Bob");
+        students.enqueue("Clever");
+        students.enqueue("David");
+        System.out.println(students);
+        Queue<String> studentsSorted = MergeSort.mergeSort(students);
+        System.out.println(studentsSorted);
     }
 }
